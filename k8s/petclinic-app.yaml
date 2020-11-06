@@ -91,10 +91,6 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: contour
 spec:
-  tls:
-  - secretName: petclinic-tls
-    hosts:
-    - #@ data.values.petclinic.host
   rules:
   - host: #@ data.values.petclinic.host
     http:
