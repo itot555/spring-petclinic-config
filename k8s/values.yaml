@@ -3,6 +3,7 @@
 petclinic:
   host: ""
   image: ""
+  namespace: ""
   wavefront:
     applicationName: ""
     uri: ""
