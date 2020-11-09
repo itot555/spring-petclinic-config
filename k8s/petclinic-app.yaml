@@ -48,6 +48,13 @@ spec:
             port: 8080
           initialDelaySeconds: 45
           periodSeconds: 5
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "1"
+          limits:
+            memory: "1Gi"
+            cpu: "1"
         env:
         - name: MANAGEMENT_METRICS_EXPORT_WAVEFRONT_URI
           valueFrom:
