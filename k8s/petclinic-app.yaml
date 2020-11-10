@@ -32,13 +32,6 @@ spec:
       containers:
       - name: spring-petclinic
         image: #@ data.values.petclinic.image
-        resources:
-          requests:
-            memory: "512Mi"
-            cpu: "500m"
-          limits:
-            memory: "1Gi"
-            cpu: "1000m"
         ports:
         - containerPort: 8080
         readinessProbe:
