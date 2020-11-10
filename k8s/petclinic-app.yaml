@@ -101,7 +101,3 @@ spec:
       - backend:
           serviceName: spring-petclinic
           servicePort: 8080
-  tls:
-  - hosts:
-    - #@ data.values.petclinic.host
-    secretName: petclinic-cert-tls
