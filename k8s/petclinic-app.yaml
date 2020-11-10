@@ -92,6 +92,7 @@ metadata:
     app: spring-petclinic
   annotations:
     kubernetes.io/ingress.class: contour
+    cert-manager.io/cluster-issuer: letsencrypt-contour-cluster-issuer
 spec:
   rules:
   - host: #@ data.values.petclinic.host
@@ -100,3 +101,7 @@ spec:
       - backend:
           serviceName: spring-petclinic
           servicePort: 8080
+  tls:
+  - hosts:
+    - #@ data.values.petclinic.host
+    secretName: petclinic-cert-tls
