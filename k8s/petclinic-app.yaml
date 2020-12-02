@@ -83,25 +83,17 @@ spec:
       protocol: TCP
       port: 8080
 ---
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
 metadata:
-  name: spring-petclinic
+  name: petclinic
   namespace: #@ data.values.petclinic.namespace
-  labels:
-    app: spring-petclinic
-  annotations:
-    kubernetes.io/ingress.class: contour
-    cert-manager.io/cluster-issuer: letsencrypt-contour-cluster-issuer
 spec:
-  rules:
-  - host: #@ data.values.petclinic.host
-    http:
-      paths:
-      - backend:
-          serviceName: spring-petclinic
-          servicePort: 8080
-  tls:
-  - hosts:
-    - #@ data.values.petclinic.host
-    secretName: petclinic-cert-tls
+  virtualhost:
+    fqdn: #@ data.values.petclinic.host
+    tls:
+      secretName: eduk8s/eduk8s-cert-tls
+  routes:
+    - services:
+        - name: spring-petclinic
+          port: 8080
