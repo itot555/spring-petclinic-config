@@ -60,7 +60,7 @@ metadata:
   namespace: applications
 spec:
   virtualhost:
-    fqdn: petclinic.fender.lab.1t0chu.dev
+    fqdn: #@ data.values.petclinic.host
     tls:
       secretName: petclinic-tls-secret
   routes:
