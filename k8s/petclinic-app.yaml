@@ -5,7 +5,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: spring-petclinic
-  namespace: #@ data.values.petclinic.namespace
+  namespace: applications
   labels:
     app: spring-petclinic
 spec:
@@ -42,7 +42,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: spring-petclinic
-  namespace: #@ data.values.petclinic.namespace
+  namespace: applications
   labels:
     app: spring-petclinic
 spec:
@@ -57,7 +57,7 @@ apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
   name: petclinic
-  namespace: #@ data.values.petclinic.namespace
+  namespace: applications
 spec:
   virtualhost:
     fqdn: petclinic.fender.lab.1t0chu.dev
