@@ -1,7 +1,7 @@
 #@data/values
 ---
 petclinic:
-#  host: ""
+  host: ""
   image: ""
 #  namespace: ""
 #  wavefront:
