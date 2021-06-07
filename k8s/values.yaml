@@ -4,7 +4,7 @@ petclinic:
   host: ""
   image: ""
   namespace: ""
-  wavefront:
-    applicationName: ""
-    uri: ""
-    apiToken: ""
+#  wavefront:
+#    applicationName: ""
+#    uri: ""
+#    apiToken: ""
